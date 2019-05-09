@@ -342,6 +342,11 @@ class Pingdom(object):
                     Type: String
                     Default: None
 
+            * tags -- Allows user to filter and sort by tags on the Uptime list page
+                Tags are comma separated and do not support key:value
+                    Type: String
+                    Default: None
+
         HTTPCustom check options:
 
             * url -- Target path on server
@@ -462,7 +467,7 @@ class Pingdom(object):
                                'notifywhenbackup', 'type', 'hostname', 'url',
                                'encryption', 'port', 'auth', 'shouldcontain',
                                'shouldnotcontain', 'postdata',
-                               'use_legacy_notifications']:
+                               'use_legacy_notifications', 'tags']:
                     if key.startswith('requestheader') is not True:
                         sys.stderr.write("'%s'" % key + ' is not a valid ' +
                                          'argument of newCheck() for type ' +
